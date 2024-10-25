@@ -1,0 +1,22 @@
+pipeline{
+  agent any
+
+  stages{
+    stage('build docker image'){
+      steps{
+        script{
+                //build docker image
+                bat"docker build -t xacuti01/dock."
+              }
+            }
+    }
+    stage('run docer container'){
+      steps{
+        script{
+                //remove the docker container with similar name to avoid conflicts
+                bat "docker rm -f my-app-container || exit0"
+                bat "docker run -d --name my-app-container xacuti01/dock"
+              }
+            }
+    }
+}
