@@ -6,7 +6,7 @@ pipeline{
       steps{
         script{
                 //build Dockerfile into an image
-                bat"docker build -t xacuti01/dock."
+                bat "docker build -t xacuti01/dock."
               }
             }
     }
