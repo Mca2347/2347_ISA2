@@ -10,7 +10,7 @@ pipeline{
               }
             }
     }
-    stage('run docker container'){
+    stage('build and run docker container'){
       steps{
         script{
                 //remove the docker container with similar name to avoid conflicts
