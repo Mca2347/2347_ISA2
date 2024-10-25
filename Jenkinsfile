@@ -5,7 +5,7 @@ pipeline{
     stage('build docker image'){
       steps{
         script{
-                //build docker image
+                //build Dockerfile into an image
                 bat"docker build -t xacuti01/dock."
               }
             }
@@ -14,8 +14,8 @@ pipeline{
       steps{
         script{
                 //remove the docker container with similar name to avoid conflicts
-                bat "docker rm -f my-app-container || exit0"
-                bat "docker run -d --name my-app-container xacuti01/dock"
+                bat "docker rm -f 2347 || exit0"
+                bat "docker run -d --name 2347 xacuti01/dock"
               }
             }
     }
